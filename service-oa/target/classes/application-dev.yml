@@ -3,6 +3,7 @@ server:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
+  mapper-locations: classpath:com/dreamcatcher/auth/mapper/xml/*.xml #指定mapper的位置
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -10,3 +11,7 @@ spring:
     url: jdbc:mysql://localhost:13306/guigu-oa?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8
     username: root
     password: 123456
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
