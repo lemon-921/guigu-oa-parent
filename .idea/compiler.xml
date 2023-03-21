@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="model" />
         <module name="service-oa" />
-        <module name="spring-security" />
-        <module name="common-util" />
         <module name="service-util" />
+        <module name="common-util" />
+        <module name="spring-security" />
       </profile>
     </annotationProcessing>
   </component>
