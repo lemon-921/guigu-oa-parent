@@ -1,6 +1,7 @@
 package com.dreamcatcher.auth.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.dreamcatchar.model.system.SysUser;
 import com.dreamcatcher.auth.mapper.SysUserMapper;
 import com.dreamcatcher.auth.service.SysUserService;
@@ -29,5 +30,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         //修改完更新这个用户
         this.updateById(sysUser);
 
+    }
+
+    @Override
+    public SysUser getByUsername(String username) {
+        LambdaQueryWrapper<SysUser> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(SysUser::getUsername,username);
+        SysUser sysUser = baseMapper.selectOne(wrapper);
+        return sysUser;
     }
 }

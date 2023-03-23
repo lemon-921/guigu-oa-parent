@@ -16,4 +16,6 @@ public interface SysUserService extends IService<SysUser> {
 
     //修改用户状态
     void updateStatus(Long id, Integer status);
+
+    SysUser getByUsername(String username);
 }
